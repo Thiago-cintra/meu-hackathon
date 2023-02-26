@@ -1,6 +1,5 @@
 package com.stefanini.repository;
 
-
 import javax.enterprise.context.ApplicationScoped;
 
 import com.stefanini.dao.GenericDAO;

@@ -13,7 +13,7 @@ import java.util.List;
 public class Jogador {
 
     @Id
-    @Column(name = "IdJogador")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
@@ -22,12 +22,10 @@ public class Jogador {
     private String nickname;
     
     @NotBlank(message = "Este campo é Obrigatório!")
-    @Size(min = 4, max = 10)
     @Column(length = 256)
     private String password;
 
-    @Column
-    @NotBlank(message = "Este campo é Obrigatório!")
+    @Column(nullable = false)
     private BigDecimal saldo;
 
     @ManyToMany
