@@ -1,14 +1,18 @@
 package com.stefanini.resources;
 
+import javax.inject.Inject;
+import javax.validation.Valid;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Response;
+
 import com.stefanini.entity.Jogador;
 import com.stefanini.service.JogadorService;
 
-import javax.inject.Inject;
-import javax.validation.Valid;
-import javax.ws.rs.*;
-import javax.ws.rs.core.Response;
-
-@ApplicationPath("/jogador")
+@Path("/jogador")
 public class JogadorResource {
 
     @Inject
@@ -32,7 +36,7 @@ public class JogadorResource {
         return Response.status(Response.Status.CREATED).build();
     }
 
-    @POST
+    @PUT
     public Response alterar(@Valid Jogador jogador) {
         jogadorService.alterar(jogador);
         return Response.status(Response.Status.OK).build();
